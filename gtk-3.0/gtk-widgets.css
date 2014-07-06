@@ -58,7 +58,9 @@
 *:active {
     color: @fg_active;
     background-color: @bg_active;
-    border-color: darker(@bg_active);
+    border-color: @debug_color;
+    /*border-width: 10px 10px;
+    border-style: solid;*/
 }
 
 *:insensitive {
@@ -413,7 +415,9 @@ GtkComboBox .button {
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
       from(@border_start), to(@border_end));
-    border-color: darker(#eeeeec);
+    /*border-color: darker(#eeeeec);
+    */
+    border-color: @debug_color;
 
     -GtkWidget-focus-line-pattern: "\0";
 }
@@ -421,14 +425,13 @@ GtkComboBox .button {
 .button:active {
     color: @fg_normal;
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(@border_start, 0.9)), to(shade(@border_start, 1.1)));
-    border-color: darker(#d9d7d6);
+      from(shade(@bg_normal, 0.5)), to(shade(@bg_normal, 0.9)));
 }
 
 .button:insensitive {
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(@bg_insensitive, 1.1)), to(shade(@bg_insensitive, 0.9)));
-    border-color: darker(@bg_insensitive);
+      from(shade(@border_start, 0.9)), to(shade(@border_end, 0.5)));
+    border-color: @debug_color;
 }
 
 .button:hover {
@@ -460,8 +463,9 @@ GtkComboBox .button {
 }
 
 .button.horizontal:active, .slider.horizontal:active {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
+    /* background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
     border-color: darker(#e8e8e6);
+    */
 }
 
 .button.horizontal:insensitive, .slider.horizontal:insensitive {
@@ -485,8 +489,8 @@ GtkComboBox .button {
 }
 
 .button.vertical:active, .slider.vertical:active {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
-    border-color: darker(#e8e8e6);
+    /* background-image: -gtk-gradient(linear, left top, right top, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
+    border-color: darker(#e8e8e6); */
 }
 
 .button.vertical:insensitive, .slider.vertical:insensitive {
