@@ -1,60 +1,41 @@
-* {
-    engine: xfce;
+/* Created July 2006
+ * Modified Dec. 2006
+ * Modified Jan. 2007
+ * Modified Jul. 2008 for xfce 4.6
+ * Modified Feb. 2009 for xfce 4.6
+ * Olivier Fourdan <fourdan@xfce.org>
+ * Ported from gtk-2.0 to gtk-3.0 by Peter de Ridder <peter@xfce.org>
+ * Released under the GPL license
+ */
 
-    -xfce-smooth-edge: true;
-    -xfce-grip-style: disabled;
+@define-color fg_active #000000;
+@define-color fg_insensitive #b1b1b1;
+@define-color fg_normal #cc0000;
+@define-color fg_prelight #101010;
+@define-color fg_selected #000000;
 
-    -GtkButton-default-border        : 0;
-    -GtkButton-default-outside-border: 0;
-    -GtkWidget-focus-line-width      : 1;
-    -GtkWidget-focus-padding         : 2;
-    -GtkMenuBar-shadow-type          : out;
-    -GtkToolbar-shadow-type          : out;
-    -GtkWidget-interior-focus        : true;
-    -GtkRange-slider-width           : 14;
-    -GtkRange-stepper-size           : 14;
-    -GtkRange-stepper-spacing        : 0;
-    -GtkRange-trough-border          : 0;
-}
+@define-color bg_active #d9d7d6;
+@define-color bg_insensitive #330000;
+@define-color bg_normal #041004;
+@define-color bg_prelight #eeeeec;
+@define-color bg_selected #d9d7d6;
 
-*:insensitive {
-    text-shadow: 1 1 white;
-}
+@define-color base_active #d9d7d6;
+@define-color base_insensitive #eeeeec;
+@define-color base_normal #ffffff;
+@define-color base_prelight #eeeeec;
+@define-color base_selected #bad8ff;
 
-GtkComboBox {
-    padding: 0px;
-}
+@define-color text_active #101010;
+@define-color text_insensitive #101010;
+@define-color text_normal #101010;
+@define-color text_prelight #101010;
+@define-color text_selected #101010;
 
-GtkComboBox .button {
-    padding: 1px;
-}
+@define-color border_start #600000;
+@define-color border_end #400000;
 
-.button {
-    border-width: 2px 2px;
+@define-color debug_color #ff00ff;
 
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#DCDAD5, 1.1)), to(shade(#DCDAD5, 1.0)));
-}                                                         
-                                                          
-.button:active {                                          
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#9E9A91, 1.0)), to(shade(#9E9A91, 1.1)));
-}                                                         
-                                                          
-.button:insensitive {                                     
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#C8C5BE, 1.1)), to(shade(#C8C5BE, 1.0)));
-}                                                         
-                                                          
-.button:hover {                                           
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#4B6983, 1.1)), to(shade(#4B6983, 1.0)));
-}
+@import url("gtk-widgets.css");
 
-.button:selected {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#4B6983, 1.0)), to(shade(#4B6983, 1.1)));
-}
-
-.menuitem {
-    border-width: 0px 0px;
-}
-
-.scrollbar, .scale {
-    border-width: 2px 2px;
-}
