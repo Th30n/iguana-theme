@@ -224,34 +224,33 @@ GtkCalendar.button, GtkCalendar.button:active, GtkCalendar.button:insensitive,
 }
 
 GtkProgressBar {
-    border-width: 0px 0px;
     padding: 0px;
 }
 
 .progressbar {
-    color: #4e9a06;
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#cce2ff, 1.1)), to(shade(#cce2ff, 0.9)));
-    border-color: darker(#cce2ff);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@fg_normal), to(@fg_prelight));
 }
 
 .progressbar.vertical {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(#cce2ff, 1.1)), to(shade(#cce2ff, 0.9)));
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@fg_normal), to(@fg_prelight));
 }
 
 .trough {
-    background-color: #e8e8e6;
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
-    border-color: darker(#e8e8e6);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@border_start_dark), to(@border_end));
+    border-width: 1px 1px;
+    border-style: solid;
+    border-color: @border_start_dark;
 }
 
 .trough.vertical {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@border_start_dark), to(@border_end));
 }
 
 .scrollbar.trough {
-    background-color: #d9d7d6;
-
-    border-width: 2px 2px;
 }
 
 .notebook {
