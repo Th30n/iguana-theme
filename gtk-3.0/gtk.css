@@ -22,17 +22,17 @@
 @define-color bg_prelight #181010;
 @define-color bg_selected #d9d7d6;
 
-@define-color base_active #d9d7d6;
-@define-color base_insensitive #eeeeec;
-@define-color base_normal #ffffff;
-@define-color base_prelight #eeeeec;
-@define-color base_selected #bad8ff;
+@define-color base_active #101010;
+@define-color base_insensitive #404040;
+@define-color base_normal #707070;
+@define-color base_prelight #104410;
+@define-color base_selected #1d881d;
 
-@define-color text_active #101010;
+@define-color text_active #1d881d;
 @define-color text_insensitive #101010;
-@define-color text_normal #101010;
+@define-color text_normal #1d1d1d;
 @define-color text_prelight #101010;
-@define-color text_selected #101010;
+@define-color text_selected #181010;
 
 @define-color border_start_light #707070;
 @define-color border_start_dark #101010;

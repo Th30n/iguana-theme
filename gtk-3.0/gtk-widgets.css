@@ -52,142 +52,103 @@
 
     color: @fg_normal;
     background-color: @bg_normal;
-    border-color: lighter(@bg_normal);
+    border-color: @border_end;
 }
 
 *:active {
     color: @fg_active;
     background-color: @bg_active;
-    border-color: @debug_color;
-    /*border-width: 10px 10px;
-    border-style: solid;*/
 }
 
 *:insensitive {
     color: @fg_insensitive;
-    /*background-color: @bg_insensitive;*/
-    border-color: darker(@bg_insensitive);
+    background-color: @bg_insensitive;
     text-shadow: 1px 1px @fg_normal;
 }
 
 *:hover {
     color: @fg_prelight;
     background-color: @bg_prelight;
-    border-color: darker(@bg_prelight);
 }
 
 *:selected {
-    color: @fg_selected;
-    background-color: @bg_selected;
-    border-color: darker(@bg_selected);
 }
 
 *:focused {
-  outline-width: 5px;
-  outline-color: @debug_color;
-  outline-style: dotted;
 }
 
 .view, .entry {
     color: @text_normal;
     background-color: @base_normal;
-    border-color: darker(@bg_normal);
-
-    -GtkWidget-focus-line-pattern: "\0";
 }
 
 .view:active, .entry:active {
-    color: @text_active;
-    background-color: @base_active;
-    border-color: darker(@bg_normal);
 }
 
 .view:insensitive, .entry:insensitive {
     color: @text_insensitive;
     background-color: @base_insensitive;
-    border-color: darker(@bg_normal);
 }
 
 .view:hover, .entry:hover {
-    color: @text_prelight;
     background-color: @base_prelight;
-    border-color: darker(@bg_normal);
 }
 
 .view:selected, .entry:selected {
     color: @text_selected;
     background-color: @base_selected;
-    border-color: darker(@bg_normal);
 }
 
 .view row:nth-child(odd) {
-    background-color: shade(@base_normal, 0.93);
 }
 
 .view row:nth-child(odd):active {
-    background-color: shade(@base_active, 0.93);
 }
 
 .view row:nth-child(odd):insensitive {
-    background-color: shade(@base_insensitive, 0.93);
 }
 
 .view row:nth-child(odd):hover {
-    background-color: shade(@base_prelight, 0.93);
 }
 
 .view row:nth-child(odd):selected {
-    background-color: shade(@base_selected, 0.93);
 }
 
 GtkCalendar {
-    color: @text_normal;
 }
 
 .header {
-    color: @fg_normal;
 }
 
 GtkCalendar:active {
-    color: @text_active;
 }
 
 GtkCalendar:insensitive {
-    color: @text_insensitive;
 }
 
 GtkCalendar:hover {
-    color: @text_prelight;
 }
 
 GtkCalendar:selected {
-    color: @text_selected;
 }
 
 .highlight {
-    color: @text_active;
-    background-color: @base_active;
 }
 
 GtkCalendar:inconsistent {
-    color: mix(lighter(@bg_normal), darker(@bg_normal), 0.5);
 }
 
 GtkCalendar:selected {
-    color: @text_active;
-    background-color: @base_active;
 }
 
-GtkCalendar.button, GtkCalendar.button:active, GtkCalendar.button:insensitive, GtkCalendar.button:hover, GtkCalendar.button:selected {
-    background-image: none;
+GtkCalendar.button, GtkCalendar.button:active, GtkCalendar.button:insensitive,
+  GtkCalendar.button:hover, GtkCalendar.button:selected {
 }
 
 .check, .radio {
     color: @text_normal;
     background-color: @base_normal;
     border-color: darker(@bg_normal);
-
-    -GtkWidget-focus-line-pattern: "\1\1";
 }
 
 .check:active, .radio:active {
@@ -199,65 +160,69 @@ GtkCalendar.button, GtkCalendar.button:active, GtkCalendar.button:insensitive, G
 .check:insensitive, .radio:insensitive {
     color: @text_insensitive;
     background-color: @base_insensitive;
-    border-color: darker(@bg_insensitive);
+    border-color: darker(@bg_normal);
 }
 
 .check:hover, .radio:hover {
     color: @text_prelight;
-    background-color: @base_prelight;
-    border-color: darker(@bg_prelight);
+    background-color: @base_selected;
+    border-color: darker(@bg_normal);
 }
 
 .check:selected, .radio:selected {
     color: @text_active;
     background-color: @base_active;
-    border-color: darker(@bg_active);
+    border-color: lighter(@bg_normal);
 }
 
 .cell {
     color: @text_normal;
-
-    border-width: 0px 0px;
+    /*background-color: @debug_color;*/
+    /*background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));*/
 }
 
 .cell:active {
-    color: @text_active;
+    color: @text_normal;
 }
 
 .cell:insensitive {
     color: @text_insensitive;
+    text-shadow: 1px 1px @text_normal;
 }
 
 .cell:hover {
     color: @text_prelight;
+    background-color: @base_prelight;
 }
 
 .cell:selected {
     color: @text_selected;
+    background-color: @base_selected;
 }
 
 .spinbutton.button {
-    color: @fg_normal;
+    /*color: @debug_color;*/
     background-color: @bg_normal;
 }
 
 .spinbutton.button:active {
-    color: @fg_active;
+    /*color: @fg_active;*/
     background-color: @bg_active;
 }
 
 .spinbutton.button:insensitive {
-    color: @fg_insensitive;
+    /*color: @fg_insensitive;*/
     background-color: @bg_insensitive;
 }
 
 .spinbutton.button:hover {
-    color: @fg_prelight;
+    /*color: @fg_prelight;*/
     background-color: @bg_prelight;
 }
 
 .spinbutton.button:selected {
-    color: @fg_selected;
+    /*color: @fg_selected;*/
     background-color: @bg_selected;
 }
 
@@ -340,10 +305,26 @@ GtkProgressBar {
 
 GtkComboBox {
     padding: 0px;
+    /*color: @debug_color;*/
 }
 
 GtkComboBox .button {
     padding: 1px;
+    /*color: @debug_color;
+    background-color: @debug_color;*/
+}
+
+GtkArrow {
+    /*color: @debug_color;*/
+}
+
+GtkArrow:insensitive {
+    /*color: @debug_color;
+    background-color: @debug_color;*/
+}
+
+GtkAppChooserButton {
+    /*color: @debug_color;*/
 }
 
 .menu {
@@ -425,21 +406,22 @@ GtkComboBox .button {
     */
     /*border-color: @debug_color;*/
     background-color: inherit;
+    color: inherit;
 
     /*-GtkWidget-focus-line-pattern: "\0";*/
 }
 
 .button:active {
-    color: @fg_normal;
     background-image: -gtk-gradient(linear, left top, left bottom,
       from(@border_start_dark), to(@border_end));
     background-color: @bg_active;
+    /*color: @debug_color;*/
 }
 
 .button:insensitive {
     /*background-image: -gtk-gradient(linear, left top, left bottom,
       from(shade(@border_start_light, 0.9)), to(shade(@border_end, 0.5)));*/
-    border-color: @debug_color;
+    /*border-color: @debug_color;*/
     background-color: @bg_insensitive
 }
 
@@ -447,7 +429,7 @@ GtkComboBox .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
       from(@fg_normal), to(@fg_prelight));
     /*border-color: darker(#cce2ff);*/
-    border-color: @debug_color;
+    /*border-color: @debug_color;*/
     background-color: @bg_prelight;
 }
 
@@ -463,7 +445,7 @@ GtkComboBox .button {
     from(@fg_normal), to(@fg_prelight));
 }
 
-GtkButton GtkLabel {
+.button GtkLabel {
   background-color: inherit;
 }
 
@@ -480,6 +462,7 @@ GtkButton GtkLabel {
 .button.horizontal, .slider.horizontal {
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#d9d7d6, 1.1)), to(shade(#d9d7d6, 0.9)));
     border-color: darker(#d9d7d6);
+    /*color: @debug_color;*/
 }
 
 .button.horizontal:active, .slider.horizontal:active {
