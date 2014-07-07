@@ -11,15 +11,15 @@
 @define-color debug_color #ff00ff;
 
 @define-color fg_active #1d881d;
-@define-color fg_insensitive #b1b1b1;
+@define-color fg_insensitive #092909;
 @define-color fg_normal #1d881d;
-@define-color fg_prelight #101010;
+@define-color fg_prelight #104410;
 @define-color fg_selected #000000;
 
-@define-color bg_active #606060;
+@define-color bg_active #1d1d1d;
 @define-color bg_insensitive #222222;
 @define-color bg_normal #222222;
-@define-color bg_prelight #eeeeec;
+@define-color bg_prelight #181010;
 @define-color bg_selected #d9d7d6;
 
 @define-color base_active #d9d7d6;
@@ -34,7 +34,8 @@
 @define-color text_prelight #101010;
 @define-color text_selected #101010;
 
-@define-color border_start #707070;
+@define-color border_start_light #707070;
+@define-color border_start_dark #101010;
 @define-color border_end #404040;
 
 @import url("gtk-widgets.css");

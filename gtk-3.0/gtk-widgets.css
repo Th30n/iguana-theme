@@ -6,7 +6,7 @@
 
     -GtkWidget-focus-line-width      : 1;
     -GtkWidget-focus-padding         : 0;
-    -GtkWidget-interior-focus        : false;
+    -GtkWidget-interior-focus        : true;
 
     -GtkButton-child-displacement-x  : 0;
     -GtkButton-child-displacement-y  : 1;
@@ -67,7 +67,7 @@
     color: @fg_insensitive;
     background-color: @bg_insensitive;
     border-color: darker(@bg_insensitive);
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px @fg_normal;
 }
 
 *:hover {
@@ -80,6 +80,12 @@
     color: @fg_selected;
     background-color: @bg_selected;
     border-color: darker(@bg_selected);
+}
+
+*:focused {
+  outline-width: 5px;
+  outline-color: @debug_color;
+  outline-style: dotted;
 }
 
 .view, .entry {
@@ -414,30 +420,34 @@ GtkComboBox .button {
 
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(@border_start), to(@border_end));
+      from(@border_start_light), to(@border_end));
     /*border-color: darker(#eeeeec);
     */
-    border-color: @debug_color;
+    /*border-color: @debug_color;*/
+    background-color: inherit;
 
-    -GtkWidget-focus-line-pattern: "\0";
+    /*-GtkWidget-focus-line-pattern: "\0";*/
 }
 
 .button:active {
     color: @fg_normal;
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(@bg_normal, 0.5)), to(shade(@bg_normal, 0.9)));
+      from(@border_start_dark), to(@border_end));
+    background-color: @bg_active;
 }
 
 .button:insensitive {
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(@border_start, 0.9)), to(shade(@border_end, 0.5)));
+      from(shade(@border_start_light, 0.9)), to(shade(@border_end, 0.5)));
     border-color: @debug_color;
 }
 
 .button:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(@fg_normal), to(@border_start));
-    border-color: darker(#cce2ff);
+      from(@fg_normal), to(@fg_prelight));
+    /*border-color: darker(#cce2ff);*/
+    border-color: @debug_color;
+    background-color: @bg_prelight;
 }
 
 .button:selected {
@@ -445,6 +455,15 @@ GtkComboBox .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
       from(shade(#4e627d, 0.9)), to(shade(#4e627d, 1.1)));
     border-color: darker(#4e627d);
+}
+
+.button:focused {
+  background-image: -gtk-gradient(linear, left top, left bottom,
+    from(@fg_normal), to(@fg_prelight));
+}
+
+GtkButton GtkLabel {
+  background-color: inherit;
 }
 
 .tooltip {
