@@ -254,50 +254,49 @@ GtkProgressBar {
 }
 
 .notebook {
-    color: #101010;
-    background-color: #ffffff;
-    border-color: darker(#ffffff);
+    background-color: @base_normal;
+    border-color: @border_start_dark;
 
-    border-width: 1px 1px;
+    border-width: 2px 2px;
     padding: 1px;
 }
 
 .notebook tab, .notebook tab * {
-    color: @fg_active;
-    background-color: #e8e8e6;
-    border-color: darker(#e8e8e6);
+    color: @text_normal;
+    background-color: @base_normal;
 }
 
 .notebook tab:active, .notebook tab *:active {
-    color: #101010;
-    background-color: #ffffff;
-    border-color: darker(#ffffff);
+    background-color: @base_normal;
 }
 
+
 .expander {
-    color: @base_normal;
+    color: @bg_normal;
     border-color: @fg_normal;
 }
 
 .expander:active {
-    color: @base_normal;
+    color: @bg_normal;
     border-color: @fg_normal;
 }
 
 .expander:insensitive {
-    color: @base_insensitive;
+    color: @bg_insensitive;
     border-color: @fg_insensitive;
 }
 
 .expander:hover {
-    color: @fg_prelight;
-    border-color: @fg_prelight;
+    color: @fg_normal;
 }
 
 .expander:selected {
-    color: @base_selected;
-    border-color: @fg_selected;
 }
+
+/*GtkLabel {
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+}*/
 
 GtkComboBox {
     padding: 0px;
