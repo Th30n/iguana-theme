@@ -11,13 +11,13 @@
 @define-color debug_color #ff00ff;
 
 @define-color fg_active #1d881d;
-@define-color fg_insensitive #092909;
+@define-color fg_insensitive #0b330b;
 @define-color fg_normal #1d881d;
 @define-color fg_prelight #104410;
 @define-color fg_selected #000000;
 
 @define-color bg_active #1d1d1d;
-@define-color bg_insensitive #222222;
+@define-color bg_insensitive #2b2b2b;
 @define-color bg_normal #222222;
 @define-color bg_prelight #181010;
 @define-color bg_selected #d9d7d6;

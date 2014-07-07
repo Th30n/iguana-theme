@@ -65,7 +65,7 @@
 
 *:insensitive {
     color: @fg_insensitive;
-    background-color: @bg_insensitive;
+    /*background-color: @bg_insensitive;*/
     border-color: darker(@bg_insensitive);
     text-shadow: 1px 1px @fg_normal;
 }
@@ -437,9 +437,10 @@ GtkComboBox .button {
 }
 
 .button:insensitive {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(@border_start_light, 0.9)), to(shade(@border_end, 0.5)));
+    /*background-image: -gtk-gradient(linear, left top, left bottom,
+      from(shade(@border_start_light, 0.9)), to(shade(@border_end, 0.5)));*/
     border-color: @debug_color;
+    background-color: @bg_insensitive
 }
 
 .button:hover {
