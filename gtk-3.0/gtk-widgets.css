@@ -214,10 +214,11 @@ GtkCalendar.button, GtkCalendar.button:active, GtkCalendar.button:insensitive,
 .spinbutton.button:insensitive {
     color: @text_insensitive;
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(@border_end), to(@border_start_light));
+      from(@border_start_dark), to(@border_end));
 }
 
 .spinbutton.button:hover {
+    color: @bg_prelight;
 }
 
 .spinbutton.button:selected {
@@ -277,8 +278,6 @@ GtkProgressBar {
 }
 
 .expander:active {
-    color: @bg_normal;
-    border-color: @fg_normal;
 }
 
 .expander:insensitive {
@@ -293,11 +292,6 @@ GtkProgressBar {
 .expander:selected {
 }
 
-/*GtkLabel {
-    background-image: -gtk-gradient(linear, left top, right top,
-      from(@debug_color), to(@debug_color));
-}*/
-
 GtkComboBox {
     padding: 0px;
     /*color: @debug_color;*/
@@ -309,13 +303,29 @@ GtkComboBox .button {
     background-color: @debug_color;*/
 }
 
+GtkComboBox .button:insensitive {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@border_start_dark), to(@border_end));
+}
+
+.arrow {
+    color: @text_prelight;
+}
+
+.arrow:hover {
+    color: @fg_prelight;
+}
+
+.arrow:insensitive {
+    color: @base_insensitive;
+}
+
 GtkArrow {
     /*color: @debug_color;*/
 }
 
 GtkArrow:insensitive {
-    /*color: @debug_color;
-    background-color: @debug_color;*/
+    /*color: @debug_color;*/
 }
 
 GtkAppChooserButton {
@@ -323,52 +333,56 @@ GtkAppChooserButton {
 }
 
 .menu {
-    background-color: #fafaf7;
-    border-color: darker(#fafaf7);
+    background-color: @bg_normal;
+    border-color: @debug_color;
 }
 
 .menuitem {
-    background-color: #fafaf7;
-    border-color: darker(#fafaf7);
+    background-color: @bg_normal;
+    border-color: @fg_normal;
+    color: @fg_normal;
 
     border-width: 2px 1px;
     padding: 2px 1px;
 }
 
 .menu:active, .memuitem:active {
-    color: #101010;
-    background-color: @bg_active;
-    border-color: darker(@bg_active);
+    color: @debug_color;
+    background-color: @debug_color;
+    border-color: @debug_color;
 }
 
 .menu:insensitive, .menuitem:insensitive {
-    background-color: #fafaf7;
-    border-color: darker(#fafaf7);
+    background-color: @bg_insensitive;
+    border-color: @text_insensitive;
+    color: @text_insensitive;
 }
 
 .menu:hover {
-    color: #101010;
-    background-color: #cce2ff;
-    border-color: darker(#cce2ff);
+    color: @debug_color;
+    background-color: @debug_color;
+    border-color: @debug_color;
 }
 
 .menuitem:hover {
-    color: #101010;
+    color: @fg_prelight;
     background-image: none;
-    background-color: #cce2ff;
-    border-color: darker(#cce2ff);
+    background-color: @bg_prelight;
+    border-color: @bg_prelight;
     border-style: solid;
 }
 
 .menu:selected, .menuitem:selected {
-    color: #101010;
-    background-color: @bg_selected;
-    border-color: darker(@bg_selected);
+    color: @debug_color;
+    background-color: @debug_color;
+    border-color: @debug_color;
 }
 
 .menubar {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#eeeeec, 1.0)), to(shade(#eeeeec, 0.9)));
-    border-color: darker(#eeeeec);
+    background-color: @bg_normal;
+    /*background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));*/
+    border-color: @debug_color;
 
     border-width: 2px 1px;
 }
@@ -378,20 +392,23 @@ GtkAppChooserButton {
 }
 
 .menubar:active {
-    color: #101010;
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_active, 0.9)), to(shade(@bg_active, 1.0)));
-    border-color: darker(@bg_active);
+    color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .menubar:insensitive {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#eeeeec, 1.0)), to(shade(#eeeeec, 0.9)));
-    border-color: darker(#eeeeec);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .menubar:selected {
-    color: #101010;
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_selected, 0.9)), to(shade(@bg_selected, 1.0)));
-    border-color: darker(@bg_selected);
+    color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .button {
@@ -417,7 +434,8 @@ GtkAppChooserButton {
     /*background-image: -gtk-gradient(linear, left top, left bottom,
       from(shade(@border_start_light, 0.9)), to(shade(@border_end, 0.5)));*/
     /*border-color: @debug_color;*/
-    background-color: @bg_insensitive
+    background-color: @bg_insensitive;
+    color: @fg_insensitive;
 }
 
 .button:hover {
@@ -426,6 +444,7 @@ GtkAppChooserButton {
     /*border-color: darker(#cce2ff);*/
     /*border-color: @debug_color;*/
     background-color: @bg_prelight;
+    color: @fg_prelight;
 }
 
 .button:selected {
@@ -442,33 +461,39 @@ GtkAppChooserButton {
 
 .button GtkLabel {
   background-color: inherit;
+  color: inherit;
 }
 
 .tooltip {
-    color: #101010;
-    background-color: #ffffdf;
-    border-color: darker(#ffffdf);
+    color: @debug_color;
+    background-color: @bg_insensitive;
+    border-color: @debug_color;
 }
 
 .scrollbar {
     -xfce-grip-style: rough;
+    color: @text_normal;
+    background-color: @debug_color;
 }
 
 .button.horizontal, .slider.horizontal {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#d9d7d6, 1.1)), to(shade(#d9d7d6, 0.9)));
-    border-color: darker(#d9d7d6);
-    /*color: @debug_color;*/
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@border_start_light), to(@border_end));
+    border-color: @text_normal;
+    color: @text_normal;
 }
 
 .button.horizontal:active, .slider.horizontal:active {
-    /* background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
-    border-color: darker(#e8e8e6);
-    */
+    /*background-image: -gtk-gradient(linear, left top, left bottom,
+        from(@debug_color), to(@debug_color));
+    border-color: @debug_color;*/
 }
 
 .button.horizontal:insensitive, .slider.horizontal:insensitive {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_insensitive, 1.1)), to(shade(@bg_insensitive, 0.9)));
-    border-color: darker(@bg_insensitive);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@border_start_dark), to(@border_end));
+    border-color: @debug_color;
+    color: @base_normal;
 }
 
 .button.horizontal:hover, .slider.horizontal:hover {
