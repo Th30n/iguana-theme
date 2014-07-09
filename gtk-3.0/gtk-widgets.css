@@ -466,8 +466,10 @@ GtkAppChooserButton {
 
 .tooltip {
     color: @debug_color;
-    background-color: @bg_insensitive;
-    border-color: @debug_color;
+    background-color: @bg_normal;
+    border-color: @bg_insensitive;
+    border-style: outset;
+    border-width: 2px;
 }
 
 .scrollbar {
@@ -484,9 +486,9 @@ GtkAppChooserButton {
 }
 
 .button.horizontal:active, .slider.horizontal:active {
-    /*background-image: -gtk-gradient(linear, left top, left bottom,
+    background-image: -gtk-gradient(linear, left top, left bottom,
         from(@debug_color), to(@debug_color));
-    border-color: @debug_color;*/
+    border-color: @debug_color;
 }
 
 .button.horizontal:insensitive, .slider.horizontal:insensitive {
@@ -497,42 +499,55 @@ GtkAppChooserButton {
 }
 
 .button.horizontal:hover, .slider.horizontal:hover {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#cce2ff, 1.1)), to(shade(#cce2ff, 0.9)));
-    border-color: darker(#cce2ff);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@fg_normal), to(@fg_prelight));
+    border-color: @text_prelight;
+    color: @text_prelight;
 }
 
 .button.horizontal:selected, .slider.horizontal:selected {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_selected, 0.9)), to(shade(@bg_selected, 1.1)));
-    border-color: darker(@bg_selected);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .button.vertical, .slider.vertical {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(#d9d7d6, 1.1)), to(shade(#d9d7d6, 0.9)));
-    border-color: darker(#d9d7d6);
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@border_start_light), to(@border_end));
+    border-color: @text_normal;
+    color: @text_normal;
 }
 
 .button.vertical:active, .slider.vertical:active {
-    /* background-image: -gtk-gradient(linear, left top, right top, from(shade(#e8e8e6, 0.9)), to(shade(#e8e8e6, 1.1)));
-    border-color: darker(#e8e8e6); */
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .button.vertical:insensitive, .slider.vertical:insensitive {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_insensitive, 1.1)), to(shade(@bg_insensitive, 0.9)));
-    border-color: darker(@bg_insensitive);
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@border_end), to(@border_start_dark));
+    border-color: @debug_color;
+    color: @base_normal;
 }
 
 .button.vertical:hover, .slider.vertical:hover {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(#cce2ff, 1.1)), to(shade(#cce2ff, 0.9)));
-    border-color: darker(#cce2ff);
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@fg_normal), to(@fg_prelight));
+    border-color: @text_prelight;
+    color: @text_prelight;
 }
 
 .button.vertical:selected, .slider.vertical:selected {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_selected, 0.9)), to(shade(@bg_selected, 1.1)));
-    border-color: darker(@bg_selected);
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .dock {
-    -xfce-grip-style: rough;
-    border-style: outset;
+    -xfce-grip-style: slide;
+    border-color: @bg_insensitive;
+    border-style: inset;
+    border-width: 2px 2px;
 }
 
