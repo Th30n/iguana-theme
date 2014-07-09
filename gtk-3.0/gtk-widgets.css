@@ -1,3 +1,5 @@
+/* Build on XFCE 4.10, Gtk+ 3.10 */
+
 * {
     engine: xfce;
 
@@ -47,6 +49,10 @@
     -GtkTreeView-expander-size       : 11;
     -GtkTreeView-horizontal-separator: 0;
     -GtkTreeView-vertical-separator  : 0;
+
+    /* Set invisible resize grip (in the bottom right corner */
+    -GtkWindow-resize-grip-width: 0;
+    -GtkWindow-resize-grip-height: 0;
 
     border-width: 2px 2px;
 
@@ -117,9 +123,6 @@
 GtkCalendar {
 }
 
-.header {
-}
-
 GtkCalendar:active {
 }
 
@@ -130,9 +133,6 @@ GtkCalendar:hover {
 }
 
 GtkCalendar:selected {
-}
-
-.highlight {
 }
 
 GtkCalendar:inconsistent {
@@ -249,6 +249,13 @@ GtkProgressBar {
 .trough.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
       from(@border_start_dark), to(@border_end));
+}
+
+.trough.bottom.vertical {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@border_end), to(@border_start_light));
 }
 
 .scrollbar.trough {
@@ -448,13 +455,18 @@ GtkAppChooserButton {
 }
 
 .button:selected {
-    color: #ffffff;
+    color: @debug_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
-      from(shade(#4e627d, 0.9)), to(shade(#4e627d, 1.1)));
-    border-color: darker(#4e627d);
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
 }
 
 .button:focused {
+  background-image: -gtk-gradient(linear, left top, left bottom,
+    from(@fg_normal), to(@fg_prelight));
+}
+
+.button:inconsistent {
   background-image: -gtk-gradient(linear, left top, left bottom,
     from(@fg_normal), to(@fg_prelight));
 }
@@ -551,3 +563,381 @@ GtkAppChooserButton {
     border-width: 2px 2px;
 }
 
+/* Testing various GTK+ style classes */
+
+.accelerator {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.background {
+    color: @debug_color;
+    background-color: @bg_normal;
+}
+
+.bottom {
+    background-color: @debug_color;
+    color: @debug_color;
+}
+
+.calendar {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.combobox-entry {
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.csd {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.cursor-handle {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.default {
+  /* This applies to GtkButton (unlike .button which applies to whole
+   * GtkButton hierarchy.
+   */
+}
+
+.dim-label {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.dnd {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.error {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.frame {
+    color: @debug_color;
+    background-color: @base_insensitive;
+    border-color: @bg_insensitive;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.grip {
+   /* Grip in the lower right corner of a window.
+    * Used for resizing. This theme's grip is invisible.
+    */
+}
+
+.header {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.highlight {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right bottom,
+      from(@border_end), to(@border_start_light));
+}
+
+.image {
+    /* Icons in GtkEntry */
+    color: @text_normal;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.image:hover {
+    color: @text_prelight;
+}
+
+.image:selected {
+    color: @text_selected;
+}
+
+.image:insensitive {
+    color: @text_insensitive;
+}
+
+.info {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.inline-toolbar {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.insertion-cursor {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.level-bar {
+    color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+      from(@border_start_light), to(@border_end));
+}
+
+.list {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.list-row {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.mark {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.osd {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.pane-separator {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.primary-toolbar {
+}
+
+.pulse {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.question {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.raised {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.rubberband {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @fg_normal;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.scale {
+}
+
+.scale-has-marks-above, scale-has-marks-below {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.scrollbars-junction {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right bottom,
+      from(@border_start_dark), to(@border_end));
+    border-style: solid;
+    border-color: @border_start_dark;
+    border-width: 0px 1px 1px 0px;
+}
+
+.separator {
+    color: @debug_color;
+    background-color: @debug_color;
+    border-color: @border_start_dark;
+    border-width: 2px;
+    border-style: inset;
+}
+
+.sidebar {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @bg_insensitive;
+    border-width: 1px;
+    border-style: inset;
+}
+
+.spinner {
+    color: @fg_normal;
+    background-color: @debug_color;
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.spinner:insensitive {
+    color: @fg_prelight;
+}
+
+.titlebar {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.toolbar {
+}
+
+.top {
+}
+
+.warning {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.column, .column-header, .row, .tab {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.xfce-panel-window-style {
+    color: @debug_color;
+    background-color: @debug_color;
+    background-image: -gtk-gradient(linear, left top, right top,
+      from(@debug_color), to(@debug_color));
+    border-color: @debug_color;
+    border-width: 2px;
+    border-style: solid;
+}
